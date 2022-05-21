@@ -22,8 +22,6 @@ public class EntityDamageByEntityListener implements Listener {
         if(!(event.getEntity() instanceof Player)) return;
         Player player = (Player) event.getEntity();
 
-        handleFight(player, player, 0);
-
         Player damager = null;
         if(event.getDamager() instanceof Player) {
             damager = (Player) event.getDamager();
