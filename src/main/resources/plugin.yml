@@ -1,0 +1,4 @@
+name: deepAntiLogout
+version: '${project.version}'
+main: pl.animekkk.deepantilogout.AntiLogoutPlugin
+api-version: 1.16
