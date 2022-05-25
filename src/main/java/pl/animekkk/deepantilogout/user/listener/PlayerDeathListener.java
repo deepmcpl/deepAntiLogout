@@ -5,7 +5,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.PlayerDeathEvent;
 import pl.animekkk.deepantilogout.AntiLogoutPlugin;
-import pl.animekkk.deepantilogout.antilogout.Fight;
+import pl.animekkk.deepantilogout.user.util.BarUtil;
 
 public class PlayerDeathListener implements Listener {
 
@@ -17,7 +17,9 @@ public class PlayerDeathListener implements Listener {
 
     @EventHandler
     public void onDeath(PlayerDeathEvent event) {
-        this.plugin.getAntiLogoutManager().removeFight(event.getEntity().getUniqueId());
+        Player player = event.getEntity();
+        this.plugin.getAntiLogoutManager().removeFight(player.getUniqueId());
+        BarUtil.removeBossBar(player);
     }
 
 }

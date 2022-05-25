@@ -12,7 +12,7 @@ import java.util.UUID;
 
 public class BarUtil {
 
-    private static HashMap<UUID, BossBar> bossBars = new HashMap<>();
+    private static final HashMap<UUID, BossBar> bossBars = new HashMap<>();
 
     public static BossBar sendBarMessage(Player player, String message, double progress) {
         BossBar bossBar = bossBars.get(player.getUniqueId());
@@ -22,6 +22,13 @@ public class BarUtil {
         bossBar.addPlayer(player);
         bossBars.put(player.getUniqueId(), bossBar);
         return bossBar;
+    }
+
+    public static void removeBossBar(Player player) {
+        BossBar bossBar = bossBars.get(player.getUniqueId());
+        if(bossBar == null) return;
+        bossBar.removeAll();
+        bossBars.remove(player.getUniqueId());
     }
 
 }
