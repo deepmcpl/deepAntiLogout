@@ -7,7 +7,7 @@ import org.bukkit.event.entity.PlayerDeathEvent;
 import pl.animekkk.deepantilogout.AntiLogoutPlugin;
 import pl.animekkk.deepantilogout.user.util.BarUtil;
 
-public class PlayerDeathListener implements Listener {
+public class PlayerDeathListener implements Listener{
 
     private final AntiLogoutPlugin plugin;
 
